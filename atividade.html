@@ -1,0 +1,105 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function numero() {
+        const num = document.getElementById("areadonumero").value;
+        document.getElementById("valor-form").innerHTML = ""
+        for (let index = 1; index <= 10; index++) {
+            const resultado = num * index
+            document.getElementById("valor-form").innerHTML += `<p> ${num} x ${index} = ${resultado} </p>`  
+        }
+    }
+    function filtraLista(){
+      const filtro = document.getElementById("filtro").value.toLowerCase();
+      const lis = document.getElementsByTagName("li");
+
+      for (const li of lis) {
+        if (filtro == ""){
+            li.style.display = 'block';
+            li.style.fontWeight = 'normal';
+        }else if (li.innerText.toLowerCase().startsWith(filtro)){
+          li.style.display = 'block';
+          li.style.fontWeight = 'bold';
+        }else{
+          li.style.display = 'none';
+        }
+      }
+    }
+   
+</script>
+<style>
+    #valor-form{
+      font-size: 32px;
+      height: 100px;
+    }
+   
+  </style>
+<body>
+    <form>
+        <input id="areadonumero" type="number" oninput="numero();">
+    </form>
+    <div id="valor-form"></div>
+    <form>
+        <label for="">Filtro: </label>
+        <input type="text" id="filtro" oninput="filtraLista();">
+      </form>
+      <ul>
+        <li>Maria</li>
+        <li>João</li>
+        <li>Ana</li>
+        <li>Pedro</li>
+        <li>Sofia</li>
+        <li>Lucas</li>
+        <li>Laura</li>
+        <li>Miguel</li>
+        <li>Clara</li>
+        <li>Guilherme</li>
+        <li>Beatriz</li>
+        <li>Gustavo</li>
+        <li>Camila</li>
+        <li>Matheus</li>
+        <li>Valentina</li>
+        <li>Rafael</li>
+        <li>Isabella</li>
+        <li>Daniel</li>
+        <li>Alice</li>
+        <li>Gabriel</li>
+        <li>Juliana</li>
+        <li>Leonardo</li>
+        <li>Larissa</li>
+        <li>Thiago</li>
+        <li>Manuela</li>
+        <li>Marcos</li>
+        <li>Yasmin</li>
+        <li>André</li>
+        <li>Carolina</li>
+        <li>Bruno</li>
+        <li>Giovanna</li>
+        <li>Felipe</li>
+        <li>Vitória</li>
+        <li>Rodrigo</li>
+        <li>Marina</li>
+        <li>Renato</li>
+        <li>Fernanda</li>
+        <li>Lucas</li>
+        <li>Letícia</li>
+        <li>Eduardo</li>
+        <li>Luana</li>
+        <li>Alexandre</li>
+        <li>Gabriela</li>
+        <li>Ricardo</li>
+        <li>Vanessa</li>
+        <li>Caio</li>
+        <li>Renata</li>
+        <li>Fernando</li>
+        <li>Natália</li>
+        <li>Marcelo</li>
+      </ul>
+</body>
+
+</html>
